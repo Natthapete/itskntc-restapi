@@ -5,6 +5,8 @@ import com.natthapete.itskntc.models.PersonalResponse
 import com.natthapete.itskntc.services.PersonalService
 import org.springframework.stereotype.Service
 import java.time.LocalDate
+import java.time.Year
+import java.time.chrono.ThaiBuddhistDate
 
 @Service
 class PersonalServiceImpl : PersonalService{
@@ -21,6 +23,7 @@ class PersonalServiceImpl : PersonalService{
     }
 
     fun subYear(year: Int): String {
-        return year.toString().substring(2, 4)
+        val years = (year + 543) - 2500
+        return years.toString()
     }
 }
